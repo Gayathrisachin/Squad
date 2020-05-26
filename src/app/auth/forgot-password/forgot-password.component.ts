@@ -34,7 +34,7 @@ export class ForgotPasswordComponent implements OnInit {
         if(this.forgotPasswordForm.invalid){
           return;
         }
-        if(this.forgotPasswordForm.controls.email.value == 'gayatri@gmail.com') {
+        if(this.forgotPasswordForm.controls.email.value == 'admin@gmail.com') {
         // this.authService.logIn(this.authForm.value);
         this.success=true
         // this.router.navigate(['mark-attendance']);

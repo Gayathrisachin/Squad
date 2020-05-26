@@ -7,9 +7,9 @@
 
 .top-content-style {
     padding: 4vw 4vw 4vw;
-    background-image:url('assets/tmp_1590038719584.jpg');
+    background-image:url('/../assets/tmp_1590038719584.jpg');
     width: -webkit-fill-available;
-    padding: 8em 4em 5em;
+    padding: 4em 4em 5em;
     border-bottom-left-radius: 70px 25px;
     border-bottom-right-radius: 70px 25px;
        
@@ -36,6 +36,7 @@ p.legend {
     font-size: 12px;
     text-align: center;
     margin-bottom: 1.2em;
+    font-weight: 600;
 }
 
 p.legend span {
@@ -99,8 +100,7 @@ input[type=email], input[type=password]  {
 .bottom-text a{
     color: #000000;
     font-size: 14px;
-    /* display: inline-block; */
-    /* margin: 0em 1em 2em; */
+    font-weight: 600;
     float: right;
     letter-spacing: 1px;
     text-decoration:none;

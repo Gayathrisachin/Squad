@@ -18,7 +18,7 @@
         <div class="card-body" style="padding: 15px;">
         <h4> Meeting Schedule</h4>
          <p>Need to attend the meeting on Friday @3pm to discuss about the work performnce.</p>
-         <img src="../../assets/oie_transparent (1).png" style="width: 110px;
+         <img src="../../assets/oie_transparent .png" style="width: 110px;
          height: 80px;right:-5px;bottom:-8px;position: absolute;">
             </div>
         </div>
@@ -29,8 +29,13 @@
                   <label class="switch">
                     <input type="checkbox" checked>
                    <span class="slider round"></span>
-                   <span class="punch-in isActive" (click)="punchIn()">Punch In<span class="fa fa-unlock" ></span></span>
-                   <span class="punch-out isActive" (click)="punchOut()" >Punch Out<span class="fa fa-lock"></span></span>
+                   <span class="punch-in isActive" (click)="punchIn()">Punch In<span><img src="../../assets/Punch_in_50px.png" style="width: 25px;
+                    
+                    position: absolute;
+                    margin-top: 9px;"></span></span>
+                   <span class="punch-out isActive" (click)="punchOut()" >Punch Out<span><img src="../../assets/Punch_in_50px.png" style="width: 25px;
+                    position: absolute;
+                    margin-top: 9px;"></span></span>
                    </label> 
                  
                    <span *ngIf="hide" #pI class="logIn-text" style="font-size: 10px;position: absolute;color:blueviolet;display: flex;left:0px">Last LogIn {{todaysDataTime}}</span> 
@@ -39,7 +44,7 @@
                 </div>
               </div>
                 <div class="card-container" style=" margin:4em -1.5em 0em -1.5em">
-                  <h5 style="font-size:12px;font-weight: 600;margin-left: 20px;">More</h5>
+                  <h5 style="font-size:12px;font-weight: 600;margin-bottom: 20px;">More</h5>
                     <div class="row">
                       <div class="col-sm-4">
                        

@@ -18,7 +18,7 @@
         <div class="card-body" style="padding: 15px;">
         <h4> Meeting Schedule</h4>
          <p>Need to attend the meeting on Friday @3pm to discuss about the work performnce.</p>
-         <img src="../../assets/oie_transparent .png" style="width: 110px;
+         <img src="assets/oie_transparent .png" style="width: 110px;
          height: 80px;right:-5px;bottom:-8px;position: absolute;">
             </div>
         </div>
@@ -26,23 +26,31 @@
                 <h5 style="font-size:12px;font-weight: 600;">Mark attendance</h5>
                
                   <div class="col-md-12-1" style="margin-top: 20px;"> 
-                  <label class="switch">
-                    <input type="checkbox" checked>
+                      
+                    <form class="example-form" [formGroup]="formGroup"  ngNativeValidate>
+
+                      <label class="switch">       
+                      <input type="checkbox" id="toggle-button-checkbox" formControlName="todaysDateTime"
+                      (change)="onToggleChange()">
                    <span class="slider round"></span>
-                   <span class="punch-in isActive" (click)="punchIn()">Punch In<span><img src="../../assets/Punch_in_50px.png" style="width: 25px;
+                   <span class="punch-in"  type="submit"  (click)="punchIn()" >Punch In<span><img src="assets/Punch_in_50px.png" style="width: 25px;
                     
                     position: absolute;
                     margin-top: 9px;"></span></span>
-                   <span class="punch-out isActive" (click)="punchOut()" >Punch Out<span><img src="../../assets/Punch_in_50px.png" style="width: 25px;
+                  
+                     
+                   <span class="punch-out"  (click)="punchOut()">Punch Out<span><img src="assets/Punch_in_50px.png" style="width: 25px;
                     position: absolute;
                     margin-top: 9px;"></span></span>
                    </label> 
-                 
-                   <span *ngIf="hide" #pI class="logIn-text" style="font-size: 10px;position: absolute;color:blueviolet;display: flex;left:0px">Last LogIn {{todaysDataTime}}</span> 
-                   <span *ngIf="!hide"#pO class="logOut-text" style="font-size: 10px;right:0;position: absolute;color:blueviolet;display: flex;right: 0px;">Last Logout {{todaysDataTime}}</span>
-                
+                  
+                   <span *ngIf="hide" class="logIn-text" style="font-size: 10px;position: absolute;color:blueviolet;display: flex;left:0px">Last LogIn {{today| date:'hh:mm a':'+0530'}}</span> 
+                   <span *ngIf="!hide"#pO class="logOut-text" style="font-size: 10px;right:0;position: absolute;color:blueviolet;display: flex;right: 0px;">Last LogOut {{today | date:'hh:mm a':'+0530'}}</span>
+                  </form>
+                  </div> 
+       
                 </div>
-              </div>
+            
                 <div class="card-container" style=" margin:4em -1.5em 0em -1.5em">
                   <h5 style="font-size:12px;font-weight: 600;margin-bottom: 20px;">More</h5>
                     <div class="row">
@@ -52,7 +60,7 @@
                           
                           <div class="cards-body">
                             <a routerLink='/log' routerLinkActive="Active">
-                            <img src="../../assets/Icon_1.png" style="background: #1fcc92;
+                            <img src="assets/Icon_1.png" style="background: #1fcc92;
                             box-shadow: 2px 5px 16px 2px rgba(16, 16, 16, 0.18);
                             border-radius: 10px;
                             padding: 0.5em;"></a>
@@ -64,7 +72,7 @@
                         <div class="cards">
                           <div class="cards-body">
                             <a routerLink='/leave' routerLinkActive="Active">
-                            <img src="../../assets/Icon_2.png" style="background: #7fe2ff;;
+                            <img src="assets/Icon_2.png" style="background: #7fe2ff;;
                               box-shadow: 2px 5px 16px 2px rgba(16, 16, 16, 0.18);
                               border-radius: 10px;
                               padding:0.5em;"></a>
@@ -76,7 +84,7 @@
                         <div class="cards" >
                           <div class="cards-body">
                             <a routerLink='/expense' routerLinkActive="Active">
-                            <img src="../../assets/Icon_3.png"  style="background: #fd8383;;
+                            <img src="assets/Icon_3.png"  style="background: #fd8383;;
                               box-shadow: 2px 5px 16px 2px rgba(16, 16, 16, 0.18);
                               border-radius: 10px;
                               padding: 0.5em;"></a>
@@ -86,10 +94,11 @@
                       </div>
                     </div>
 
-                    <!-- <button (click)=onclick()>find me</button> -->
+                   
         </div>
-        
-        
-        
+       
 </div>
+
+</div>
+
 </div>

@@ -7,7 +7,7 @@ import { Fake } from '../models/fake.model';
     providedIn: 'root'
 })
 export class FakeService {
-    url:string='http://localhost:3000/User'
+    url:string='http://localhost:3000/Fake'
     constructor(private http:HttpClient){}
     getAll(){
         return this.http.get<Fake[]>(this.url)

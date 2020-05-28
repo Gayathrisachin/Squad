@@ -207,7 +207,8 @@ a{
     height: 34px;
   }
   
-  .switch input {display:none;}
+  
+  input {display:none;}
   
   .slider {
     position: absolute;
@@ -744,3 +745,79 @@ input:checked + .slider:after {
     width: 100%;
     padding-left: 15px;
   }
+
+
+
+  /* :host {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 50px;
+  } */
+  
+  input[type="checkbox"] {
+    display: none; 
+  }
+  
+  
+  .toggle-button-switch {
+    position: absolute;
+   border: 1px solid #ffffff;
+  line-height: 50px;
+  left:0;
+  width: 200px;
+  color: #fff;
+  height: 5em;
+  border-radius: 100px;
+  background: linear-gradient(to left,#D16AF7, #f765f9);
+  transition: all 0.4s ease-in-out;
+  }
+  
+  
+  .toggle-button-text {
+    overflow: hidden;
+    border-radius: 25px;
+    background: #cccccc;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    
+  }
+ 
+  .toggle-button-text-on,
+  .toggle-button-text-off {
+   
+    line-height: 50px;
+    cursor: pointer;
+ 
+  }
+  .toggle-button-text-on{
+    position:absolute;
+    left: 0;
+    width: calc(30% - 20px);
+    color: #ffffff;
+    text-align: right !important;
+    font-size: 15px;
+    height: 45px;
+    line-height: 45px;
+    cursor: pointer;
+    z-index: 5;
+    margin-top:5px;
+    font-weight: 100;
+  }
+.toggle-button-text-off{
+ 
+  width: calc(100% - -6px);
+  color: #ffffff;
+ right:0;
+    font-size: 15px;
+    height: 45px;
+    line-height: 45px;
+    cursor: pointer;
+    z-index: 5 !important;
+    margin-top:5px;
+    font-weight: 100;
+}
+  input[type="checkbox"]:checked ~ .toggle-button-switch {
+    left: 252px;
+  }
+  

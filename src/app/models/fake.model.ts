@@ -1,4 +1,4 @@
 export class Fake{
-    pI:string
-    pO:string
+    id:number
+    todaysDateTime:string
 }

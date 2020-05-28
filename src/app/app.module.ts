@@ -16,6 +16,7 @@ import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.
 
 
 import { LoginComponent } from './modules/shared/login/login.component';
+import { ToggleButtonComponent } from './toggle-button/toggle-button.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { LoginComponent } from './modules/shared/login/login.component';
     ApplyLeaveComponent,
     LogInfoComponent,
     ForgotPasswordComponent,
+    ToggleButtonComponent,
    
   ],
   imports: [

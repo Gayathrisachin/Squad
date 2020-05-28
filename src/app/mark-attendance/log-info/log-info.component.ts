@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Fake } from 'src/app/models/fake.model';
+import { FakeService } from 'src/app/services/fake.service';
 
 export interface Log{
   Date:string;
@@ -14,43 +16,17 @@ export interface Log{
 
 
 export class LogInfoComponent implements OnInit {
-log:Log[]=[
-  {
-  Date:'15-4-2020',
-  punchIn:'9.15 am',
-  punchOut:'6.15 pm'
-},
-{
-  Date:'16-4-2020',
-  punchIn:'9.30 am',
-  punchOut:'7.15 pm'
-},
-{
-  Date:'17-4-2020',
-  punchIn:'9.30 am',
-  punchOut:'6.30 pm'
-},{
-  Date:'15-4-2020',
-  punchIn:'9.15 am',
-  punchOut:'6.15 pm'
-},
-{
-  Date:'16-4-2020',
-  punchIn:'9.30 am',
-  punchOut:'7.15 pm'
-},
-{
-  Date:'17-4-2020',
-  punchIn:'9.30 am',
-  punchOut:'6.30 pm'
-}
+log:Fake[]=[
+ 
 ]
-  constructor() { }
+  constructor(private svc:FakeService) { }
 
   ngOnInit() {
-    this.getData();
+    this.svc.getAll().subscribe(data=>{
+      this.log=data
+    });
   }
-getData(){
-  return this.log;
-}
+// getData(){
+//   return this.log;
+// }
 }

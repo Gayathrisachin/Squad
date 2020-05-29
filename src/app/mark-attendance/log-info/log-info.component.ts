@@ -27,9 +27,9 @@ public DateHeader = [{ name: "This Week" }, { name: "This Month"}];
   }
 
   ngOnInit() {
-    // this.svc.getAll().subscribe(data=>{
-    //   this.log=data
-    // });
+    this.svc.getAll().subscribe(data=>{
+      this.log=data
+    });
   }
 // getDate(){
 //   return this.DateHeader;

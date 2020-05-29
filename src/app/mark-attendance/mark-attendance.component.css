@@ -566,7 +566,7 @@ input:checked + .slider:after {
           color: #fff;
           height: 2.6em;
           border-radius: 100px;
-          transform: translateX(210px);
+          transform: translateX(180px);
           transition: all 0.4s ease-in-out;
       }
       

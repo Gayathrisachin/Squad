@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Fake } from 'src/app/models/fake.model';
 import { FakeService } from 'src/app/services/fake.service';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { Observable, combineLatest } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 export interface Log{
   Date:string;
@@ -18,15 +22,25 @@ export interface DateHeader{
 
 
 export class LogInfoComponent implements OnInit {
-log:Fake[]=[]
-dateHeader:DateHeader[]
+log:Fake[]
+form:FormGroup
+
+today=new Date();
 public DateDetails: object = [];  
-public DateHeader = [{ name: "This Week" }, { name: "This Month"}];  
-  constructor(private svc:FakeService) { 
+
+public DateHeader = [{ name: 'This Week' }];  
+
+  filteredStates$: any;
+  constructor(private svc:FakeService,private fb:FormBuilder) { 
     this.getDate()
+  
   }
 
   ngOnInit() {
+
+    this.form=this.fb.group({
+      name:''
+    })
     this.svc.getAll().subscribe(data=>{
       this.log=data
     });
@@ -34,10 +48,5 @@ public DateHeader = [{ name: "This Week" }, { name: "This Month"}];
 getDate(){
   return this.DateHeader;
 }
-// SearchDate(name: string) {  
-//   let obj = this.log.filter(m => m.todaysDateTime == name);  
-//   this.DateDetails = obj;  
-//   return this.DateDetails;  
-//   }  
-    
+
 }

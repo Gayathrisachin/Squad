@@ -21,9 +21,11 @@
             <!-- <span style="right:0px;position: absolute;margin:0 15px;"> -->
             <!-- <span style="right:0px;position: absolute;margin:0 15px;"> -->
                 <div class="box" style="right:0px;position: absolute;margin:0 15px;" >
-                    <select>
+                    <form [formGroup]="form">
+                    <select formControlName="name" >
                         <option *ngFor="let date of DateHeader">{{date.name}} </option>
                     </select>
+                </form>
                   </div>
              <!-- </span> -->
              <p style="font-size:20px;padding:0;margin-top: 4px;">45.5<span style="font-size:10px;padding-left:5px">hrs</span></p>

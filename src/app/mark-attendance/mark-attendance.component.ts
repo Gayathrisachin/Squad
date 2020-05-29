@@ -27,16 +27,16 @@ export class MarkAttendanceComponent implements OnInit {
   todaysDateTime: string;
 
   constructor(private router:Router,private fakeService:FakeService,private formBuilder:FormBuilder ) {
-    this.formGroup = formBuilder.group({
+   
+   }
+
+  ngOnInit(): void {
+    this.formGroup = this.formBuilder.group({
       id:'',
       todaysDateTime:'',
       // todaysTime:''
     
     });
-   }
-
-  ngOnInit(): void {
- 
   }
   onClick(){
 
@@ -44,7 +44,7 @@ export class MarkAttendanceComponent implements OnInit {
   }
  
   onToggleChange(){
-    if(this.formGroup.value===true){
+    if(this.formGroup.value){
      this.formGroup.setValue({  
        id:'',
        todaysDateTime:this.today ,
@@ -54,16 +54,16 @@ export class MarkAttendanceComponent implements OnInit {
     
      })
     }
-   else{
+  //  else{
     
-      this.formGroup.setValue({  
-        id:'',
-        todaysDateTime:this.today  
-      })
-      this.fakeService.postAll(this.formGroup.value).subscribe(data=>{
+  //     this.formGroup.setValue({  
+  //       id:'',
+  //       todaysDateTime:this.today  
+  //     })
+  //     this.fakeService.postAll(this.formGroup.value).subscribe(data=>{
      
-      })
-   }
+  //     })
+  //  }
   }
 
  punchOut(){

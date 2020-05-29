@@ -23,7 +23,7 @@ dateHeader:DateHeader[]
 public DateDetails: object = [];  
 public DateHeader = [{ name: "This Week" }, { name: "This Month"}];  
   constructor(private svc:FakeService) { 
-    // this.getDate()
+    this.getDate()
   }
 
   ngOnInit() {
@@ -31,9 +31,9 @@ public DateHeader = [{ name: "This Week" }, { name: "This Month"}];
       this.log=data
     });
   }
-// getDate(){
-//   return this.DateHeader;
-// }
+getDate(){
+  return this.DateHeader;
+}
 // SearchDate(name: string) {  
 //   let obj = this.log.filter(m => m.todaysDateTime == name);  
 //   this.DateDetails = obj;  

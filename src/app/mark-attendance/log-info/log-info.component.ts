@@ -7,7 +7,9 @@ export interface Log{
   punchIn:string
   punchOut:string
   }
-
+export interface DateHeader{
+  name:string
+}
 @Component({
   selector: 'app-log-info',
   templateUrl: './log-info.component.html',
@@ -16,17 +18,26 @@ export interface Log{
 
 
 export class LogInfoComponent implements OnInit {
-log:Fake[]=[
- 
-]
-  constructor(private svc:FakeService) { }
+log:Fake[]=[]
+dateHeader:DateHeader[]
+public DateDetails: object = [];  
+public DateHeader = [{ name: "This Week" }, { name: "This Month"}];  
+  constructor(private svc:FakeService) { 
+    // this.getDate()
+  }
 
   ngOnInit() {
-    this.svc.getAll().subscribe(data=>{
-      this.log=data
-    });
+    // this.svc.getAll().subscribe(data=>{
+    //   this.log=data
+    // });
   }
-// getData(){
-//   return this.log;
+// getDate(){
+//   return this.DateHeader;
 // }
+// SearchDate(name: string) {  
+//   let obj = this.log.filter(m => m.todaysDateTime == name);  
+//   this.DateDetails = obj;  
+//   return this.DateDetails;  
+//   }  
+    
 }

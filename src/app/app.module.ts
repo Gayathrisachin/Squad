@@ -17,6 +17,8 @@ import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.
 
 import { LoginComponent } from './modules/shared/login/login.component';
 import { ToggleButtonComponent } from './toggle-button/toggle-button.component';
+import { OtpVerificationComponent } from './auth/otp-verification/otp-verification.component';
+
 
 
 @NgModule({
@@ -31,6 +33,7 @@ import { ToggleButtonComponent } from './toggle-button/toggle-button.component';
     LogInfoComponent,
     ForgotPasswordComponent,
     ToggleButtonComponent,
+    OtpVerificationComponent,
    
   ],
   imports: [

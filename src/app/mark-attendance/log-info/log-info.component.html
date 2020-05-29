@@ -22,11 +22,7 @@
             <!-- <span style="right:0px;position: absolute;margin:0 15px;"> -->
                 <div class="box" style="right:0px;position: absolute;margin:0 15px;" >
                     <select>
-                      <option>This week</option>
-                      <option>Option 2</option>
-                      <option>Option 3</option>
-                      <option>Option 4</option>
-                      <option>Option 5</option>
+                        <option *ngFor="let date of DateHeader">{{date.name}} </option>
                     </select>
                   </div>
              <!-- </span> -->

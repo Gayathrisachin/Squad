@@ -51,7 +51,7 @@
                     <tr *ngFor="let item of log">
                         <td>{{ item.todaysDateTime | date:'dd-MM-yyyy'}}</td>
                         <td>{{ item.todaysDateTime | date:'hh:mm a':'+0530'}}</td>
-                        <td>{{ item.todaysDateTime| date:'hh:mm a':'+0530' }}</td>
+                        <td *ngIf=!child>{{ item.todaysDateTime| date:'hh:mm a':'+0530' }}</td>
                     </tr>
                 </tbody>
             </table>

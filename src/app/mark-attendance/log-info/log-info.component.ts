@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Fake } from 'src/app/models/fake.model';
 import { FakeService } from 'src/app/services/fake.service';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
@@ -24,7 +24,7 @@ export interface DateHeader{
 export class LogInfoComponent implements OnInit {
 log:Fake[]
 form:FormGroup
-
+@Input() child: boolean;
 today=new Date();
 public DateDetails: object = [];  
 

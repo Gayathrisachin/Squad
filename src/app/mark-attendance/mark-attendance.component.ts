@@ -15,6 +15,8 @@ export class Fake{
   styleUrls: ['./mark-attendance.component.css']
 })
 export class MarkAttendanceComponent implements OnInit {
+
+  parent:boolean
   id:number
   today= new Date();
   // todaysDate=formatDate(this.today, 'hh:mm a', 'en-US', '+0530')
@@ -29,17 +31,18 @@ export class MarkAttendanceComponent implements OnInit {
     this.formGroup = this.formBuilder.group({
       id:'',
       todaysDateTime:'',
-      todaysTime:''
+      todaysDate:''
       
     });
     
    }
    
   ngOnInit(): void {
+    
     this.formGroup.setValue({  
       id:'',
       todaysDateTime:true ,
-      todaysTime:''
+      todaysDate:''
     })
   }
   onClick(){
@@ -52,14 +55,14 @@ export class MarkAttendanceComponent implements OnInit {
     this.formGroup.setValue({  
       id:'',
       todaysDateTime:this.today ,
-      todaysTime:''
+      todaysDate:''
     })
      this.fakeService.postAll(this.formGroup.value).subscribe(data=>{
   alert('you ae in')
   this.formGroup.setValue({  
     id:'',
     todaysDateTime:false,
-    todaysTime:''
+    todaysDate:''
   })
      })
     }
@@ -67,6 +70,11 @@ export class MarkAttendanceComponent implements OnInit {
   }
   onToggleChanges(){
     if(this.checked===false)
+    this.formGroup.setValue({  
+      id:'',
+      todaysDateTime:false,
+      todaysDate:'12:45'
+    })
     alert('you are out')
   }
  punchOut(){

@@ -265,7 +265,7 @@ input:checked + .slider:after {
       color: #ffffff;
       text-align: right !important;
       font-size: 15px;
-      width: calc(92% - 52px);
+      width: calc(100% - 52px);
       height: 45px;
       line-height: 45px;
       cursor: pointer;
@@ -292,7 +292,7 @@ input:checked + .slider:after {
 }
 
 /* extra small devices */
-@media only screen and (max-width: 300px){
+/* @media only screen and (max-width: 360px){
     .attendance{
     width: 100%;
     padding-right: 15px;
@@ -310,7 +310,7 @@ input:checked + .slider:after {
     border: 1px solid #ffffff;
     line-height: 50px;
     color: #ffffff;
-    width: 100px;
+    width: 200px;
     height: 4em;
     border-radius: 100px;
     transform: translateX(120px);
@@ -346,7 +346,7 @@ input:checked + .slider:after {
       margin-left: 15px;
   }
   
-}
+} */
 .cards {
     background: #ffff;
     margin:10px 5px;
@@ -393,8 +393,9 @@ input:checked + .slider:after {
           line-height: 50px;
           color: #fff;
           height: 2.7em;
+          width:160px;
           border-radius: 100px;
-          transform: translateX(185px);
+          transform: translateX(195px);
           transition: all 0.4s ease-in-out;
       }
       
@@ -420,7 +421,7 @@ input:checked + .slider:after {
           color: #ffffff;
           text-align: right !important;
           font-size: 14px;
-          width: calc(88% - 13px);
+          width: calc(100% - 52px);
           height: 3em;
           line-height: 45px;
           cursor: pointer;
@@ -434,7 +435,7 @@ input:checked + .slider:after {
         color: #ffffff;
         text-align: right !important;
         font-size: 14px;
-        width: calc(14% - -32px);
+        
         height: 4em;
         line-height: 45px;
         cursor: pointer;
@@ -565,7 +566,7 @@ input:checked + .slider:after {
           color: #fff;
           height: 2.6em;
           border-radius: 100px;
-          transform: translateX(180px);
+          transform: translateX(310px);
           transition: all 0.4s ease-in-out;
       }
       

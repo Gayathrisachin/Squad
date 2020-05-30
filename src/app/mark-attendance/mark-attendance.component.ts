@@ -19,53 +19,56 @@ export class MarkAttendanceComponent implements OnInit {
   today= new Date();
   // todaysDate=formatDate(this.today, 'hh:mm a', 'en-US', '+0530')
   public hide:boolean=false
- 
+  mySwitch: boolean = true;
   checked:boolean=true
   users:Fake[]
   
   formGroup: FormGroup;
-  todaysDateTime: string;
 
   constructor(private router:Router,private fakeService:FakeService,private formBuilder:FormBuilder ) {
-   
-   }
-
-  ngOnInit(): void {
     this.formGroup = this.formBuilder.group({
       id:'',
       todaysDateTime:'',
-      // todaysTime:''
-    
+      todaysTime:''
+      
     });
+    
+   }
+   
+  ngOnInit(): void {
+    this.formGroup.setValue({  
+      id:'',
+      todaysDateTime:true ,
+      todaysTime:''
+    })
   }
   onClick(){
 
     this.router.navigateByUrl('/schedule');
   }
- 
+
   onToggleChange(){
-    if(this.formGroup.value){
-     this.formGroup.setValue({  
-       id:'',
-       todaysDateTime:this.today ,
-   
-     })
+    if(this.checked===true){
+    this.formGroup.setValue({  
+      id:'',
+      todaysDateTime:this.today ,
+      todaysTime:''
+    })
      this.fakeService.postAll(this.formGroup.value).subscribe(data=>{
-    
+  alert('you ae in')
+  this.formGroup.setValue({  
+    id:'',
+    todaysDateTime:false,
+    todaysTime:''
+  })
      })
     }
-  //  else{
-    
-  //     this.formGroup.setValue({  
-  //       id:'',
-  //       todaysDateTime:this.today  
-  //     })
-  //     this.fakeService.postAll(this.formGroup.value).subscribe(data=>{
-     
-  //     })
-  //  }
+    // this.checked=false
   }
-
+  onToggleChanges(){
+    if(this.checked===false)
+    alert('you are out')
+  }
  punchOut(){
   this.hide=!this.hide
  }

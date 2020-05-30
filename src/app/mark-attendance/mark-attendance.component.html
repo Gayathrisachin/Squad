@@ -30,15 +30,16 @@
                     <form class="example-form" [formGroup]="formGroup" >
 
                       <label class="switch">       
-                      <input type="checkbox" id="toggle-button-checkbox" formControlName="todaysDateTime"
-                      (change)="onToggleChange()">
+                      <input type="checkbox" id="toggle-button-checkbox" formControlName="todaysDateTime" (change)="onToggleChange()"
+                     >
                    <span class="slider round"></span>
-                   <span class="punch-in" >Punch In<span><img src="assets/Punch_in_50px.png" style="width: 25px;
+                   <span class="punch-in">Punch In<span><img src="assets/Punch_in_50px.png" style="width: 25px;
                     
                     position: absolute;
                     margin-top: 9px;"></span></span>
                   
-                     
+                  <input type="checkbox" id="toggle-button-checkbox" formControlName="todaysDate" (change)="onToggleChanges()"
+                  >
                    <span class="punch-out"  (click)="punchOut()">Punch Out<span><img src="assets/Punch_out_50px.png" style="width: 25px;
                     position: absolute;
                     margin-top: 9px;"></span></span>
